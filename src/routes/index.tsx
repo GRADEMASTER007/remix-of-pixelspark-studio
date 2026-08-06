@@ -1,3 +1,4 @@
+import heroStudio from "@/assets/hero-studio.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -141,7 +142,7 @@ function Landing() {
         </div>
         <div className="relative mx-auto max-w-6xl px-5 pb-16">
 
-          <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-8 border-t border-border pt-8 sm:grid-cols-4">
+          <dl className="grid max-w-2xl grid-cols-2 gap-8 border-t border-border pt-8 sm:grid-cols-4">
             {[
               ["Avg. size cut", "72%"],
               ["Formats", "8+"],
