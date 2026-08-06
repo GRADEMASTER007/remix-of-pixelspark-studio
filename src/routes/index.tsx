@@ -1,4 +1,3 @@
-import heroStudio from "@/assets/hero-studio.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -133,7 +132,7 @@ function Landing() {
           </div>
           </div>
           <img
-            src={heroStudio}
+            src="/images/hero-studio.jpg"
             alt="PixelForge AI optimisation dashboard comparing original and optimised image sizes"
             width={1280}
             height={1024}
