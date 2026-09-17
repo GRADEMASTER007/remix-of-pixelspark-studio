@@ -258,7 +258,7 @@ function OptimizePage() {
                 {formatBytes(Math.max(0, totals.original - totals.optimized))}
               </p>
               <p className="text-xs text-muted-foreground">
-                {formatPercent(1 - totals.optimized / totals.original)} smaller across{" "}
+                {formatPercent(totals.original - totals.optimized, totals.original)}% smaller across{" "}
                 {items.filter((i) => i.status === "done").length} files
               </p>
             </div>
@@ -295,7 +295,7 @@ function OptimizePage() {
                     <td className="metric px-4 py-3 text-signal">
                       {after === undefined
                         ? "—"
-                        : `${formatBytes(saved)} · ${formatPercent(saved / item.originalBytes)}`}
+                        : `${formatBytes(saved)} · ${formatPercent(saved, item.originalBytes)}%`}
                     </td>
                     <td className="metric px-4 py-3 text-xs text-muted-foreground">
                       {item.width && item.height
