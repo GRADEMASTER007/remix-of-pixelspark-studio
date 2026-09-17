@@ -15,6 +15,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedAssetsRouteImport } from './routes/_authenticated/assets'
 import { Route as AuthenticatedBillingRouteImport } from './routes/_authenticated/billing'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedOptimizeRouteImport } from './routes/_authenticated/optimize'
 import { Route as AuthenticatedPresetsRouteImport } from './routes/_authenticated/presets'
 
 const IndexRoute = IndexRouteImport.update({
@@ -46,6 +47,11 @@ const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedOptimizeRoute = AuthenticatedOptimizeRouteImport.update({
+  id: '/optimize',
+  path: '/optimize',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedPresetsRoute = AuthenticatedPresetsRouteImport.update({
   id: '/presets',
   path: '/presets',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/assets': typeof AuthenticatedAssetsRoute
   '/billing': typeof AuthenticatedBillingRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
+  '/optimize': typeof AuthenticatedOptimizeRoute
   '/presets': typeof AuthenticatedPresetsRoute
 }
 export interface FileRoutesByTo {
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/assets': typeof AuthenticatedAssetsRoute
   '/billing': typeof AuthenticatedBillingRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
+  '/optimize': typeof AuthenticatedOptimizeRoute
   '/presets': typeof AuthenticatedPresetsRoute
 }
 export interface FileRoutesById {
@@ -76,13 +84,28 @@ export interface FileRoutesById {
   '/_authenticated/assets': typeof AuthenticatedAssetsRoute
   '/_authenticated/billing': typeof AuthenticatedBillingRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/optimize': typeof AuthenticatedOptimizeRoute
   '/_authenticated/presets': typeof AuthenticatedPresetsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/assets' | '/billing' | '/dashboard' | '/presets'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/assets'
+    | '/billing'
+    | '/dashboard'
+    | '/optimize'
+    | '/presets'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/assets' | '/billing' | '/dashboard' | '/presets'
+  to:
+    | '/'
+    | '/auth'
+    | '/assets'
+    | '/billing'
+    | '/dashboard'
+    | '/optimize'
+    | '/presets'
   id:
     | '__root__'
     | '/'
@@ -91,6 +114,7 @@ export interface FileRouteTypes {
     | '/_authenticated/assets'
     | '/_authenticated/billing'
     | '/_authenticated/dashboard'
+    | '/_authenticated/optimize'
     | '/_authenticated/presets'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +168,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/optimize': {
+      id: '/_authenticated/optimize'
+      path: '/optimize'
+      fullPath: '/optimize'
+      preLoaderRoute: typeof AuthenticatedOptimizeRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/presets': {
       id: '/_authenticated/presets'
       path: '/presets'
@@ -158,6 +189,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedAssetsRoute: typeof AuthenticatedAssetsRoute
   AuthenticatedBillingRoute: typeof AuthenticatedBillingRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedOptimizeRoute: typeof AuthenticatedOptimizeRoute
   AuthenticatedPresetsRoute: typeof AuthenticatedPresetsRoute
 }
 
@@ -165,6 +197,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAssetsRoute: AuthenticatedAssetsRoute,
   AuthenticatedBillingRoute: AuthenticatedBillingRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedOptimizeRoute: AuthenticatedOptimizeRoute,
   AuthenticatedPresetsRoute: AuthenticatedPresetsRoute,
 }
 
