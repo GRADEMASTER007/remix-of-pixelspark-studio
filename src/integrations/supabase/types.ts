@@ -22,7 +22,11 @@ export type Database = {
           height: number | null
           id: string
           optimized_bytes: number | null
+          optimized_path: string | null
           original_bytes: number
+          original_path: string | null
+          output_format: string | null
+          preset_name: string | null
           status: Database["public"]["Enums"]["job_status"]
           thumbnail_url: string | null
           user_id: string
@@ -35,7 +39,11 @@ export type Database = {
           height?: number | null
           id?: string
           optimized_bytes?: number | null
+          optimized_path?: string | null
           original_bytes?: number
+          original_path?: string | null
+          output_format?: string | null
+          preset_name?: string | null
           status?: Database["public"]["Enums"]["job_status"]
           thumbnail_url?: string | null
           user_id: string
@@ -48,7 +56,11 @@ export type Database = {
           height?: number | null
           id?: string
           optimized_bytes?: number | null
+          optimized_path?: string | null
           original_bytes?: number
+          original_path?: string | null
+          output_format?: string | null
+          preset_name?: string | null
           status?: Database["public"]["Enums"]["job_status"]
           thumbnail_url?: string | null
           user_id?: string

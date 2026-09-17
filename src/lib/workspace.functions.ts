@@ -21,7 +21,9 @@ export const getWorkspace = createServerFn({ method: "GET" })
     const [assetsRes, jobsRes, presetsRes] = await Promise.all([
       supabase
         .from("assets")
-        .select("id, filename, format, original_bytes, optimized_bytes, width, height, status, created_at")
+        .select(
+          "id, filename, format, original_bytes, optimized_bytes, width, height, status, created_at, optimized_path, original_path",
+        )
         .order("created_at", { ascending: false })
         .limit(50),
       supabase
