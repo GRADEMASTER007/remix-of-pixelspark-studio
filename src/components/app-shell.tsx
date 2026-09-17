@@ -8,6 +8,7 @@ import {
   CreditCard,
   LogOut,
   Hexagon,
+  UploadCloud,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { PLAN_LABELS } from "@/lib/plans";
