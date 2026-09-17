@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { to: "/dashboard", label: "Overview", icon: LayoutGrid },
+  { to: "/optimize", label: "Optimise", icon: UploadCloud },
   { to: "/assets", label: "Assets", icon: Images },
   { to: "/presets", label: "Presets", icon: SlidersHorizontal },
   { to: "/billing", label: "Billing", icon: CreditCard },
