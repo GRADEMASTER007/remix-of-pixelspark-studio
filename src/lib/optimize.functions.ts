@@ -78,7 +78,6 @@ export const optimizeAsset = createServerFn({ method: "POST" })
       finished_at: new Date().toISOString(),
     } as never);
 
-    await supabase.rpc("noop_placeholder" as never).catch?.(() => undefined);
 
     return {
       id: inserted.data?.id ?? null,
